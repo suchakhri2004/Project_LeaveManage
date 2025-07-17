@@ -1,0 +1,354 @@
+.processDetail-page {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  color: #333;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  line-height: 1.4;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #026E18;
+  font-weight: 500;
+  line-height: 100%;
+  font-size: 1.6rem;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.stepContainer {
+  position: relative;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 45px;
+    top: 30px;
+    width: 2px;
+    height: calc(100% - 80px + 20px);
+    background-color: #e2e8f0;
+    z-index: 1;
+    transition: background-color 0.3s;
+  }
+
+  &.completedStep::after {
+    background-color: #6FBD2C;
+  }
+
+  &.inProgressStep::after {
+    background-color: #F59E0B;
+  }
+
+  &.rejectedStep::after {
+    background-color: #E53E3E;
+  }
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stepIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.stepTitle {
+  color: #026E18;
+  font-weight: 500;
+  line-height: 100%;
+  font-size: 1.6rem;
+  flex-grow: 1;
+}
+
+.stepBadge {
+  background-color: #026E18;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.stepContent {
+  margin-left: 70px;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  border-left: 4px solid #e2e8f0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.taskIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.taskDetails {
+  flex-grow: 1;
+}
+
+.taskTitle {
+  color: #2d3748;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.taskSubtitle {
+  color: #718096;
+  font-size: 14px;
+}
+
+.taskStatus {
+  text-align: right;
+  color: #718096;
+  font-size: 13px;
+  min-width: 200px;
+}
+
+.taskStatusMain {
+  color: #2d3748;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+/* Status Colors */
+.stepCompleted {
+  background-color: #6FBD2C;
+  
+  &::before {
+    content: '✓';
+  }
+}
+
+.stepInProgress {
+  background-color: #F59E0B;
+  
+  &::before {
+    content: '⏳';
+  }
+}
+
+.stepPending {
+  background-color: #CBD5E0;
+  
+  &::before {
+    content: '...';
+  }
+}
+
+.rejectedStep {
+  background-color: #E53E3E;
+  
+  &::before {
+    content: '✗';
+  }
+}
+
+.completedIcon {
+  background-color: #6FBD2C;
+}
+
+.inProgressIcon {
+  background-color: #F59E0B;
+}
+
+.pendingIcon {
+  background-color: #CBD5E0;
+}
+
+.rejectedIcon {
+  background-color: #E53E3E;
+}
+
+.blockedIcon {
+  background-color: #A0AEC0;
+  
+  &::before {
+    content: '🚫';
+  }
+}
+
+.completed {
+  border-left: 4px solid #6FBD2C;
+}
+
+.inProgress {
+  border-left: 4px solid #F59E0B;
+}
+
+.pending {
+  border-left: 4px solid #CBD5E0;
+}
+
+.rejected {
+  border-left: 4px solid #E53E3E;
+}
+
+.blocked {
+  border-left: 4px solid #A0AEC0;
+}
+
+/* Loading and Error States */
+.loadingContainer, .errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+}
+
+.loadingContainer {
+  color: #4a5568;
+}
+
+.errorContainer {
+  color: #e53e3e;
+}
+
+/* Unauthorized State */
+.unauthorizedContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.loginButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #026E18;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #035a14;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .stepHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .stepIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    font-size: 16px;
+  }
+
+  .stepTitle {
+    font-size: 18px;
+  }
+
+  .stepContent {
+    margin-left: 0;
+  }
+
+  .taskItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .taskDetails,
+  .taskStatus {
+    width: 100%;
+    text-align: left;
+  }
+
+  .stepContainer:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .stepTitle {
+    font-size: 16px;
+  }
+
+  .taskTitle {
+    font-size: 14px;
+  }
+
+  .taskSubtitle {
+    font-size: 12px;
+  }
+
+  .stepBadge {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,129 @@
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 90%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #026E18;
+  margin: 1rem 0;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+
+    th {
+      background-color: #026E18;
+      color: white;
+      padding: 12px 16px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      border-bottom: 1px solid #3d6b3d;
+
+      &:first-child {
+        border-top-left-radius: 8px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 8px;
+      }
+    }
+
+    td {
+      text-align: center;
+      font-size: 1.3rem;
+      padding: 12px 16px;
+      border-bottom: 1px solid #e0e0e0;
+      vertical-align: middle;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    tr:hover {
+      background-color: #f0f8f0;
+    }
+  }
+}
+
+.editIcon {
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-block;
+
+  &:hover {
+    color: #026E18;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.paginationInfo {
+  color: #666;
+  font-size: 14px;
+}
+
+.paginationControls {
+  display: flex;
+  gap: 5px;
+}
+
+.pageBtn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 35px;
+  text-align: center;
+
+  &:not(.active):hover {
+    background-color: #f5f5f5;
+  }
+}
+
+
+.active {
+  background-color: #4a7c4a;
+  color: white;
+  border-color: #4a7c4a;
+}
+
+.navBtn {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

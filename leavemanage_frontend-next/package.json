@@ -1,0 +1,36 @@
+{
+  "name": "leavemanage_frontend-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/jwt-decode": "^2.2.1",
+    "chart.js": "^4.5.0",
+    "jwt-decode": "^4.0.0",
+    "lodash.debounce": "^4.0.8",
+    "next": "15.3.4",
+    "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-select": "^5.10.2",
+    "sass": "^1.89.2",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "24.0.3",
+    "@types/react": "19.1.8",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
